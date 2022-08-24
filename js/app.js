@@ -10,7 +10,6 @@ function renderizaPokedex(data) {
 }
 
 function renderizaHabilidades(abilities){
-    console.log(abilities.ability.name)
     divAbilities.innerHTML += 
     `
     <div class = descricao>
@@ -32,7 +31,6 @@ btnProcurar.onclick = () => {
     fetch(`https://pokeapi.co/api/v2/pokemon/${inputNomePokemon.value}`)
     .then(response => response.json())
     .then(data => {
-        console.log(data)
         renderizaPokedex(data)
         data.abilities.forEach(renderizaHabilidades);
     })
